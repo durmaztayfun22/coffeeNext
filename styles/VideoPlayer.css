@@ -1,0 +1,38 @@
+.video-container {
+    width: 100%;
+    position: relative;
+  }
+  
+  .video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .video-container {
+      padding-top: 75%; /* Mobil cihazlarda daha büyük bir aspect ratio */
+    }
+  }
+  
+  @media screen and (min-width: 601px) and (max-width: 960px) {
+    .video-container {
+      padding-top: 56.25%; /* Büyük tabletler için 16:9 aspect ratio */
+    }
+  }
+  
+  @media screen and (min-width: 961px) {
+    .video-container {
+      padding-top: 50%; /* Büyük tabletler ve bilgisayarlar için daha küçük bir aspect ratio */
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .video-container {
+      padding-top: 50%; /* Büyük tabletler ve bilgisayarlar için daha küçük bir aspect ratio */
+      padding-left: 70%;
+    }
+  }
+  

@@ -1,0 +1,510 @@
+/* Genel stiller */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin:  0;
+}
+
+/* Ana içerik bölümü */
+main {
+  width:  100%;
+  padding:  20px; /* Kenar boşluğu ekleyelim */
+}
+
+.ConAll{
+  width:  100%;
+  height:  100%;
+}
+
+.Con-Body {
+  display: flex;
+  justify-content: center; /* resmi yatayda ortala */
+  align-items: center; /* resmi dikeyde ortala */
+}
+
+.Con-Body-Text {
+  text-align: center;
+  width:  50%;
+}
+
+.Con-BodyImg {
+  width:  50%;
+}
+
+.Con-Body-img {
+  width:  70%;
+}
+
+.Con-Body-ContactUS {
+  display: flex;
+  margin-top: 5%;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.Con-Body-ContactUS-Form {
+  position: relative;
+  margin: 0 auto;
+  width: 60%;
+  overflow: hidden;
+  background-color: #6F4E37;
+  padding: 2%;
+  /* Formun içine stickerları yerleştirmek için padding alanı bırakın */
+  position: relative; /* Sticker'ların pozisyonunu belirlemek için */
+}
+
+.Con-Body-ContactUS-Form .coffeeSticker-1 img {
+  position: absolute;
+  top: 10%; /* Formun yüksekliğinin yarısına göre ayarlamak için */
+  left: 5%; /* Sol kenara yapıştırmak için */
+  transform: translate(-50%, -50%); /* Sticker'ı dikey ve yatay olarak ortalamak için */
+  height: 100px;
+  width: 100px;
+}
+
+.Con-Body-ContactUS-Form .coffeeSticker-2 img {
+  position: absolute;
+  top: 87%; /* Formun yüksekliğinin yarısına göre ayarlamak için */
+  right: 6%; /* Sağ kenara yapıştırmak için */
+  transform: translate(50%, -50%); /* Sticker'ı dikey ve yatay olarak ortalamak için */
+  height: 100px;
+  width: 100px;
+}
+
+/* Geri kalan stiller aynı kalabilir */
+.Con-Body-ContactUS-Form-title h3 {
+  text-align: center;
+  position: relative;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.Con-Body-ContactUS-Form ul {
+  width: 100%;
+  list-style: none;
+}
+
+.Con-Body-ContactUS-Form ul li {
+  padding: 20px; /* İçeriği kenarlardan ayır */
+  background-color: transparent;
+  align-items: center;
+  margin-bottom: 10px; /* Alt kısmına boşluk bırak */
+  display: flex; /* Öğeleri yatayda hizala */
+  color: white;
+}
+
+.Con-Body-ContactUS-Form ul li input {
+  margin: 2%;
+  width: calc(50% - 10px); /* Yarı genişlik, kenar boşluğunu çıkar */
+  background-color: transparent;
+  color: #fff;
+  border: none; /* Kenar çizgisini kaldır */
+  border-bottom: 1px solid #fff; /* Alt kısmına sadece çizgi ekle */
+  padding: 5px; /* İçeriği kenarlardan ayır */
+  outline: none; /* Odaklanıldığında kenarlığı kaldır */
+}
+
+.Con-Body-ContactUS-Form ul li .description {
+  width: calc(100% - 10px);
+}
+
+.Con-Body-ContactUS-Form ul li input:focus {
+  border-bottom: 1px solid #00bcd4; /* Örnek olarak mavi renk */
+}
+
+.Con-Body-ContactUS-Form ul li input:hover {
+  border-bottom: 1px solid #00bcd4; /* Örnek olarak mavi renk */
+}
+
+.Con-Body-ContactUS-Form ul li input::placeholder {
+  color: #fff; /* Siyah renk */
+}
+
+.Con-Body-ContactUS-Button{
+  margin-left: 45%;
+  background-color: #fff;
+  color: black;
+}
+
+.Con-Body-ContactUS-Button:hover {
+  background-color: black;
+  color: #fff;
+}
+
+/* small tablet styles */
+@media screen and (max-width: 620px){
+  .Con-Body-Text, .Con-BodyImg {
+    width:  100%; /* Mobil cihazlarda metin ve resim bölümlerini yatayda tam genişlikte göster */
+  }
+
+  .Con-Body-img {
+    width:  100%; /* Mobil cihazlarda resim genişliğini tam genişlikte göster */
+  }
+
+  .Con-Body-ContactUS {
+    display: flex;
+    margin-top: 5%;
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .Con-Body-ContactUS-Form {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #6F4E37;
+    position: relative; /* Sticker'ların pozisyonunu belirlemek için */
+  }
+
+  .Con-Body-ContactUS-Form-title h3 {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+  }
+  
+  .Con-Body-ContactUS-Form ul {
+    max-width: 100%;
+    list-style: none;
+  }
+  
+  .Con-Body-ContactUS-Form ul li {
+    font-size: 10px;
+    background-color: transparent;
+    align-items: center;
+    margin-bottom: 5px; /* Alt kısmına boşluk bırak */
+    display: flex; /* Öğeleri yatayda hizala */
+    color: white;
+  }
+  
+  .Con-Body-ContactUS-Form ul li input {
+    margin: 2%;
+    width: calc(50% - 10px); /* Yarı genişlik, kenar boşluğunu çıkar */
+    background-color: transparent;
+    color: #fff;
+    border: none; /* Kenar çizgisini kaldır */
+    border-bottom: 1px solid #fff; /* Alt kısmına sadece çizgi ekle */
+    padding: 2px; /* İçeriği kenarlardan ayır */
+    outline: none; /* Odaklanıldığında kenarlığı kaldır */
+  }
+
+  .Con-Body-ContactUS-Form .coffeeSticker-1 img {
+    height: 35px;
+    width: 35px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 10%; /* Değiştirildi */
+    left: 10%; /* Değiştirildi */
+  }
+  
+  .Con-Body-ContactUS-Form .coffeeSticker-2 img {
+    height: 35px;
+    width: 35px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 90%; /* Değiştirildi */
+    right: 0;  /* Değiştirildi */
+  }
+
+  .Con-Body-ContactUS-Button{
+    margin-left: 45%;
+    font-size: 10px;
+    background-color: #fff;
+    color: black;
+  }
+
+}
+
+/*large tablets & laptop styles*/
+@media screen and (min-width: 960px){
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin:  0;
+  }
+  
+  /* Ana içerik bölümü */
+  main {
+    width:  100%;
+    padding:  20px; /* Kenar boşluğu ekleyelim */
+  }
+  
+  .ConAll{
+    width:  100%;
+    height:  100%;
+  }
+  
+  .Con-Body {
+    display: flex;
+    justify-content: center; /* resmi yatayda ortala */
+    align-items: center; /* resmi dikeyde ortala */
+  }
+  
+  .Con-Body-Text {
+    text-align: center;
+    width:  50%;
+  }
+  
+  .Con-BodyImg {
+    width:  50%;
+  }
+  
+  .Con-Body-img {
+    width:  70%;
+  }
+  
+  .Con-Body-ContactUS {
+    display: flex;
+    margin-top: 5%;
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .Con-Body-ContactUS-Form {
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    overflow: hidden;
+    background-color: #6F4E37;
+    padding: 2%;
+    /* Formun içine stickerları yerleştirmek için padding alanı bırakın */
+    position: relative; /* Sticker'ların pozisyonunu belirlemek için */
+  }
+  
+  .Con-Body-ContactUS-Form .coffeeSticker-1 img {
+    height: 50px;
+    width: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 10%; /* Değiştirildi */
+    left: 5%; /* Değiştirildi */
+  }
+  
+  .Con-Body-ContactUS-Form .coffeeSticker-2 img {
+    height: 50px;
+    width: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 87%; /* Formun yüksekliğinin yarısına göre ayarlamak için */
+    right: 6%; /* Değiştirildi */
+  }
+
+  
+  /* Geri kalan stiller aynı kalabilir */
+  .Con-Body-ContactUS-Form-title h3 {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+  }
+  
+  .Con-Body-ContactUS-Form ul {
+    width: 100%;
+    list-style: none;
+  }
+  
+  .Con-Body-ContactUS-Form ul li {
+    padding: 20px; /* İçeriği kenarlardan ayır */
+    background-color: transparent;
+    align-items: center;
+    margin-bottom: 10px; /* Alt kısmına boşluk bırak */
+    display: flex; /* Öğeleri yatayda hizala */
+    color: white;
+  }
+  
+  .Con-Body-ContactUS-Form ul li input {
+    margin: 2%;
+    width: calc(50% - 10px); /* Yarı genişlik, kenar boşluğunu çıkar */
+    background-color: transparent;
+    color: #fff;
+    border: none; /* Kenar çizgisini kaldır */
+    border-bottom: 1px solid #fff; /* Alt kısmına sadece çizgi ekle */
+    padding: 5px; /* İçeriği kenarlardan ayır */
+    outline: none; /* Odaklanıldığında kenarlığı kaldır */
+  }
+  
+  .Con-Body-ContactUS-Form ul li .description {
+    width: calc(100% - 10px);
+  }
+  
+  .Con-Body-ContactUS-Form ul li input:focus {
+    border-bottom: 1px solid #00bcd4; /* Örnek olarak mavi renk */
+  }
+  
+  .Con-Body-ContactUS-Form ul li input:hover {
+    border-bottom: 1px solid #00bcd4; /* Örnek olarak mavi renk */
+  }
+  
+  .Con-Body-ContactUS-Form ul li input::placeholder {
+    color: #fff; /* Siyah renk */
+  }
+  
+  .Con-Body-ContactUS-Button{
+    margin-left: 45%;
+    background-color: #fff;
+    color: black;
+  }
+  
+  .Con-Body-ContactUS-Button:hover {
+    background-color: black;
+    color: #fff;
+  }
+}
+
+/*desktop styles*/
+@media screen and (min-width: 1200px){
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin:  0;
+  }
+  
+  /* Ana içerik bölümü */
+  main {
+    width:  100%;
+    padding:  20px; /* Kenar boşluğu ekleyelim */
+  }
+  
+  .ConAll{
+    width:  100%;
+    height:  100%;
+  }
+  
+  .Con-Body {
+    display: flex;
+    justify-content: center; /* resmi yatayda ortala */
+    align-items: center; /* resmi dikeyde ortala */
+  }
+  
+  .Con-Body-Text {
+    text-align: center;
+    width:  50%;
+  }
+  
+  .Con-BodyImg {
+    width:  50%;
+  }
+  
+  .Con-Body-img {
+    width:  70%;
+  }
+  
+  .Con-Body-ContactUS {
+    display: flex;
+    margin-top: 5%;
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .Con-Body-ContactUS-Form {
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    overflow: hidden;
+    background-color: #6F4E37;
+    padding: 2%;
+    /* Formun içine stickerları yerleştirmek için padding alanı bırakın */
+    position: relative; /* Sticker'ların pozisyonunu belirlemek için */
+  }
+  
+  .Con-Body-ContactUS-Form .coffeeSticker-1 img {
+    position: absolute;
+    top: 10%; /* Formun yüksekliğinin yarısına göre ayarlamak için */
+    left: 5%; /* Sol kenara yapıştırmak için */
+    transform: translate(-50%, -50%); /* Sticker'ı dikey ve yatay olarak ortalamak için */
+    height: 100px;
+    width: 100px;
+  }
+  
+  .Con-Body-ContactUS-Form .coffeeSticker-2 img {
+    position: absolute;
+    top: 87%; /* Formun yüksekliğinin yarısına göre ayarlamak için */
+    right: 6%; /* Sağ kenara yapıştırmak için */
+    transform: translate(50%, -50%); /* Sticker'ı dikey ve yatay olarak ortalamak için */
+    height: 100px;
+    width: 100px;
+  }
+  
+  /* Geri kalan stiller aynı kalabilir */
+  .Con-Body-ContactUS-Form-title h3 {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+  }
+  
+  .Con-Body-ContactUS-Form ul {
+    width: 100%;
+    list-style: none;
+  }
+  
+  .Con-Body-ContactUS-Form ul li {
+    padding: 20px; /* İçeriği kenarlardan ayır */
+    background-color: transparent;
+    align-items: center;
+    margin-bottom: 10px; /* Alt kısmına boşluk bırak */
+    display: flex; /* Öğeleri yatayda hizala */
+    color: white;
+  }
+  
+  .Con-Body-ContactUS-Form ul li input {
+    margin: 2%;
+    width: calc(50% - 10px); /* Yarı genişlik, kenar boşluğunu çıkar */
+    background-color: transparent;
+    color: #fff;
+    border: none; /* Kenar çizgisini kaldır */
+    border-bottom: 1px solid #fff; /* Alt kısmına sadece çizgi ekle */
+    padding: 5px; /* İçeriği kenarlardan ayır */
+    outline: none; /* Odaklanıldığında kenarlığı kaldır */
+  }
+  
+  .Con-Body-ContactUS-Form ul li .description {
+    width: calc(100% - 10px);
+  }
+  
+  .Con-Body-ContactUS-Form ul li input:focus {
+    border-bottom: 1px solid #00bcd4; /* Örnek olarak mavi renk */
+  }
+  
+  .Con-Body-ContactUS-Form ul li input:hover {
+    border-bottom: 1px solid #00bcd4; /* Örnek olarak mavi renk */
+  }
+  
+  .Con-Body-ContactUS-Form ul li input::placeholder {
+    color: #fff; /* Siyah renk */
+  }
+  
+  .Con-Body-ContactUS-Button{
+    margin-left: 45%;
+    background-color: #fff;
+    color: black;
+  }
+  
+  .Con-Body-ContactUS-Button:hover {
+    background-color: black;
+    color: #fff;
+  }
+}

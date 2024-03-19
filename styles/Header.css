@@ -1,0 +1,428 @@
+#root {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 10s linear;
+    }
+  }
+  
+  .container {
+    max-width: 100%;
+  }
+  
+  .header {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .title {
+    color: black;
+    width: 80px;
+    display: flex;
+    align-items: center;
+  }
+
+  .title img {
+    width: 40px; /* Logo boyutunu ayarlayın */
+    height: auto; /* Yüksekliği otomatik olarak ayarlar */
+    margin-right: 10px; /* Logo ile metin arasında boşluk bırakır */
+  }
+
+  span {
+    text-decoration: none;
+  }
+
+  
+  .ul {
+    margin-left: 0;
+  }
+
+  .hamburger-menu-btn {
+    display: none; /* Ekran boyutu 1100px'nin üstündeyse mobil menüyü gizle */
+  }
+
+  .ul li {
+    color: black;
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+    position: relative;
+  }
+
+  .ul li::after {
+    content: ''; /* Pseudo-element içeriği */
+    position: absolute; /* Mutlak konumlandırma */
+    bottom: -2px; /* Alt çizginin li elemanının altında başlaması için */
+    left: 0; /* Sol kenardan başlaması için */
+    width: 100%; /* Li elemanının tam genişliğini kaplaması için */
+    height: 2px; /* Çizginin kalınlığı */
+    background-color: black; /* Çizgi rengi */
+    transition: transform 0.3s ease-in-out; /* Animasyon efekti */
+    transform: scaleX(0); /* Başlangıçta çizgiyi sıfıra küçült */
+  }
+
+  .ul li:hover::after {
+    transform: scaleX(1); /* Üzerine gelindiğinde çizgiyi tam genişlikte göster */
+  }
+
+  .li {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+  }
+
+  .dropdown-content.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  .dropdown-content span {
+    color: black;
+    font-size: 10px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content span:hover {
+    background-color: #ddd;
+  }
+
+  /* Yalnızca "Language" öğesi için animasyon */
+  .language-li:hover .dropdown-content {
+    display: block;
+    opacity: 1; /* Animasyon sırasında opaklık değeri */
+    transform: translateY(0); /* Aşağı inen animasyon */
+  }
+
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .headertitlebig {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  
+  .headertitlebig h1 {
+    font-size: 50px;
+    color: #000;
+  }
+  
+  .headertitlebig h1:hover {
+    -webkit-text-stroke: 2px #000;
+    color: transparent;
+  }
+
+  .headerOP{
+    margin-top: 70px;
+    padding-top: 250px;
+    position: relative;
+    text-align: center;
+    width: 60%;
+    height: auto;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: calc(40% - 20px);
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .card-text {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .card-text.price {
+    font-size: 20px;
+  }
+  
+  @media (max-width: 1100px) {
+  
+    .header {
+      padding: 0 2%;
+    }
+  
+    .header-content {
+      padding: 10px 2%;
+    }
+  
+    .title {
+      top: 20px;
+      width: calc(50% - 40px); /* Hamburger menü butonunun genişliği kadar azaltarak sol tarafa yerleştirin */
+      left: 20px; /* Sol taraftan 20px içeride başlamasını sağlar */
+      position: absolute; /* Diğer stillerle birlikte mutlak konumlandırma kullanın */
+    }
+    
+    .mobile-menu {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 50%;
+      max-width: 0; /* Başlangıçta menü gizlidir */
+      background-color: #fff;
+      overflow-x: hidden;
+      transition: max-width 0.5s; /* Max genişlik değişiklikleri için geçiş efekti ekler */
+      z-index: 999;
+    }
+    
+    .mobile-menu.open {
+      max-width: 250px; /* Menü açıldığında max genişlik 250 piksel olur */
+    }
+    
+    
+    .mobile-menu ul {
+      padding: 20px; /* Liste öğeleri arasında boşluk ekler */
+    }
+    
+    .mobile-menu ul li {
+      margin-bottom: 10px; /* Liste öğeleri arasında boşluk ekler */
+    }
+    
+    .hamburger-menu-btn {
+      top: 20px;
+      display: block; /* Ekran boyutu 1100px'nin altındaysa göster */
+      color: #000;
+      background-color: transparent;
+      right: 20px; /* Sağ taraftan 20px içeride başlamasını sağlar */
+      position: absolute; /* Diğer stillerle birlikte mutlak konumlandırma kullanın / / İstediğiniz yüksekliğe göre ayarlayın */
+      z-index: 1000; /* Diğer içeriğin üstünde olması için */
+    }
+
+    .hidden {
+      display: none;
+    }
+    
+    .headertitlebig {
+      margin-top: 20px;
+    }
+  
+  
+    .headertitlebig h1 {
+      font-size: 35px;
+    }
+  
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: calc(100% - 20px);
+      margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 900px) {
+  
+    .header {
+      padding: 0 2%;
+    }
+  
+    .header-content {
+      padding: 10px 2%;
+    }
+  
+    .title {
+      top: 20px;
+      width: calc(50% - 40px); /* Hamburger menü butonunun genişliği kadar azaltarak sol tarafa yerleştirin */
+      left: 20px; /* Sol taraftan 20px içeride başlamasını sağlar */
+      position: absolute; /* Diğer stillerle birlikte mutlak konumlandırma kullanın */
+    }
+    
+    .mobile-menu {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 50%;
+      max-width: 0; /* Başlangıçta menü gizlidir */
+      background-color: #fff;
+      overflow-x: hidden;
+      transition: max-width 0.5s; /* Max genişlik değişiklikleri için geçiş efekti ekler */
+      z-index: 999;
+    }
+    
+    .mobile-menu.open {
+      max-width: 80px; /* Menü açıldığında max genişlik 250 piksel olur */
+    }
+    
+    
+    .mobile-menu ul {
+      padding: 20px; /* Liste öğeleri arasında boşluk ekler */
+    }
+    
+    .mobile-menu ul li {
+      margin-bottom: 10px; /* Liste öğeleri arasında boşluk ekler */
+      font-size: 12px;
+    }
+
+    .mobile-menu .ul .li .nav-link {
+      font-size: 12px;
+    }
+    
+    .hamburger-menu-btn {
+      top: 20px;
+      display: block; /* Ekran boyutu 1100px'nin altındaysa göster */
+      color: #000;
+      background-color: transparent;
+      right: 20px; /* Sağ taraftan 20px içeride başlamasını sağlar */
+      position: absolute; /* Diğer stillerle birlikte mutlak konumlandırma kullanın / / İstediğiniz yüksekliğe göre ayarlayın */
+      z-index: 1000; /* Diğer içeriğin üstünde olması için */
+    }
+
+    .hidden {
+      display: none;
+    }
+  
+    .headertitlebig h1 {
+      font-size: 25px;
+    }
+
+    .headerOP p{
+      font-size: 10px;
+      width: 100%;
+    }
+  
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: calc(100% - 20px);
+      margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 600px){
+
+    .title {
+      top: 20px;
+      width: calc(50% - 40px); /* Hamburger menü butonunun genişliği kadar azaltarak sol tarafa yerleştirin */
+      left: 20px; /* Sol taraftan 20px içeride başlamasını sağlar */
+      position: absolute; /* Diğer stillerle birlikte mutlak konumlandırma kullanın */
+    }
+    
+    .mobile-menu {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 50%;
+      max-width: 0; /* Başlangıçta menü gizlidir */
+      background-color: #fff;
+      overflow-x: hidden;
+      transition: max-width 0.5s; /* Max genişlik değişiklikleri için geçiş efekti ekler */
+      z-index: 999;
+    }
+    
+    .mobile-menu.open {
+      max-width: 80px; /* Menü açıldığında max genişlik 250 piksel olur */
+    }
+    
+    
+    .mobile-menu ul {
+      padding: 20px; /* Liste öğeleri arasında boşluk ekler */
+    }
+    
+    .mobile-menu ul li {
+      margin-bottom: 10px; /* Liste öğeleri arasında boşluk ekler */
+      font-size: 12px;
+    }
+
+    .mobile-menu .ul .li .nav-link {
+      font-size: 12px;
+    }
+    
+    .hamburger-menu-btn {
+      top: 20px;
+      display: block; /* Ekran boyutu 1100px'nin altındaysa göster */
+      color: #000;
+      background-color: transparent;
+      right: 20px; /* Sağ taraftan 20px içeride başlamasını sağlar */
+      position: absolute; /* Diğer stillerle birlikte mutlak konumlandırma kullanın / / İstediğiniz yüksekliğe göre ayarlayın */
+      z-index: 1000; /* Diğer içeriğin üstünde olması için */
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .headertitlebig h1 {
+      font-size: 10px;
+    }
+
+    .headerOP p{
+      max-width: 100%;
+      font-size: 8px;
+    }
+  }

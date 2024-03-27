@@ -1,8 +1,8 @@
-import React, { useEffect } from "react"; // Importing React library for JSX
+import React from "react";
 import Swal from "sweetalert2";
 
 // Functional component for a Not Found Page
-function NotFoundPage() {
+export default function NotFoundPage() {
     useEffect(() => {
         Swal.fire({
             icon: "error",
@@ -16,5 +16,3 @@ function NotFoundPage() {
         <p>Page Not Found</p>
     </div>;
 }
-
-export default NotFoundPage; // Exporting the NotFoundPage component

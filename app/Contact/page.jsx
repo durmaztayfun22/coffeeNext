@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import '../styles/Contact.css'
+import '../../styles/Contact.css'
 import axios from "axios";
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
@@ -8,8 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const api = 'https://strapidevelopment.onrender.com/api/forms';
 
 
-const Contact = ({ locale }) => {
-
+export default function Contact({ locale }) {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [phone, setPhone] = useState('');
@@ -104,10 +103,7 @@ const Contact = ({ locale }) => {
       <ToastContainer />
     </main>
   );
-};
-
-export default Contact;
-
+}
 
 //-------------------------------------------------------------------------------------------------------------------------------
 

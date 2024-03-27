@@ -1,8 +1,8 @@
 import React from "react"; // Importing React library for JSX
-import '../styles/Modal.css'  // Importing CSS file for styling
+import '../../styles/Modal.css'  // Importing CSS file for styling
 
 // Functional component for a modal with props
-const Modal = ({src, alt, onClose}) => {
+export default function Modal({src, alt, onClose}) {
     return(
         <div className="modal"  onClick={(e) => e.stopPropagation()}> {/* Container for modal, clicking anywhere outside modal will close it */}
             <div className="modal-content" onClick={onClose}> {/* Modal content area */}
@@ -12,5 +12,3 @@ const Modal = ({src, alt, onClose}) => {
     
     )
 }
-
-export default Modal; // Exporting the Modal component

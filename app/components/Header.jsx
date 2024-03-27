@@ -1,15 +1,16 @@
-// Header.jsx
-import React, { useState, useRef, useEffect } from 'react';
-import { useLocation, Link  } from 'react-router-dom';
+// Header.jsx'i dinamik olarak yükle
 
-import '../styles/Header.css';
+import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const Header = ({ locale, setLocale }) => {
+import '../../styles/Header.css';
+
+export default function Header({ locale, setLocale }) {
+
     const [pageTitle, setPageTitle] = useState('Coffees');
     const [pageDescription, setPageDescription] = useState('We are coffee drinkers who dont overdo our Americanos. To make the best coffee, time, temperature and technique must be in place, but without quality beans roasted to perfection, its all for nothing.');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isButtonClicked, setIsButtonClicked] = useState(false);
     const buttonClass = isMobileMenuOpen ? 'hamburger-menu-btn hidden' : 'hamburger-menu-btn';
     const dropdownRef = useRef(null);
     const menuRef = useRef(null);
@@ -101,16 +102,18 @@ const Header = ({ locale, setLocale }) => {
             <div className="container">  
                 <header className="header">
                     <div className="header-content">
-                        <Link to="/" className="title">
-                            <img src="https://i.imgur.com/qscsMyf.png" alt="coffeeCup" />
-                            <span className="fs-4">{locale === 'tr' ? 'Kahve' : 'Coffee'}</span>
+                        <Link href="/">
+                            <a className="title">
+                                <img src="https://i.imgur.com/qscsMyf.png" alt="coffeeCup" />
+                                <span className="fs-4">{locale === 'tr' ? 'Kahve' : 'Coffee'}</span>
+                            </a>
                         </Link>
 
                         <button className={buttonClass} onClick={toggleMenu}>
                             <span className="hamburger-icon">&#9776;</span>
                         </button>
 
-                        <div  ref={menuRef} className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+                        <div ref={menuRef} className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
                             <ul className="ul">
                                 <li className='language-li li' onClick={toggleDropdown} ref={dropdownRef} >
                                 {locale === 'tr' ? 'Sayfa Dilini Çevir' : 'Language'}
@@ -121,9 +124,9 @@ const Header = ({ locale, setLocale }) => {
                                     </div>
                                 )}
                                 </li>
-                                <li className="li"><Link to="/" className="nav-link">{locale === 'tr' ? 'Ana Sayfa' : 'Home'}</Link></li>
-                                <li className="li"><Link to="/about" className="nav-link">{locale === 'tr' ? 'Hakkında' : 'About'}</Link></li>
-                                <li className="li"><Link to="/contact" className="nav-link">{locale === 'tr' ? 'İletişim' : 'Contact'}</Link></li>
+                                <li className="li"><Link href="/"><a className="nav-link">{locale === 'tr' ? 'Ana Sayfa' : 'Home'}</a></Link></li>
+                                <li className="li"><Link href="/about"><a className="nav-link">{locale === 'tr' ? 'Hakkında' : 'About'}</a></Link></li>
+                                <li className="li"><Link href="/contact"><a className="nav-link">{locale === 'tr' ? 'İletişim' : 'Contact'}</a></Link></li>
                             </ul>
                         </div>
                     </div>
@@ -140,5 +143,3 @@ const Header = ({ locale, setLocale }) => {
         </>
     )
 }
-
-export default Header;

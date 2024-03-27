@@ -1,9 +1,9 @@
 import React from "react";
-import VideoPlayer from "../public/VideoPlayer";
-import '../styles/VideoPlayer.css';
-import '../styles/About.css';
+import VideoPlayer from "../components/VideoPlayer";
+import '../../styles/VideoPlayer.css';
+import '../../styles/About.css';
 
-const About = ({ locale }) => {
+export default function About({ locale }) {
   return(
     <>
       <main>
@@ -46,6 +46,3 @@ const About = ({ locale }) => {
     </>
   )
 }
-
-export default About;
-//

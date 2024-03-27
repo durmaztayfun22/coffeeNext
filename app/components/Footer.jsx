@@ -2,8 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitterSquare, faInstagramSquare, faFacebookSquare, faLinkedin, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 
-
-const Footer = ({ locale }) => {
+export default function Footer({ locale }) {
     return (
         <div className="container">
             {/* Footer section */}
@@ -49,5 +48,3 @@ const Footer = ({ locale }) => {
         </div>
     )
 }
-
-export default Footer;

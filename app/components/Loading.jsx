@@ -1,8 +1,8 @@
 import React from "react"; // Importing React library for JSX
-import '../styles/Loading.css'
+import '../../styles/Loading.css'
 
 // Functional component for a Loading Page
-function LoadingPage() {
+export default function LoadingPage() {
 
     return (
         <div className="wrapper">
@@ -27,5 +27,3 @@ function LoadingPage() {
         </div>
     );
 }
-
-export default LoadingPage; // Exporting the LoadingPage component

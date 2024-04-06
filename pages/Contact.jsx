@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import '../../styles/Contact.css'
+import '../styles/Contact.css'
 import axios from "axios";
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';

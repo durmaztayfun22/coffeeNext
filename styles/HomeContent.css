@@ -143,6 +143,8 @@
   
   .card-body {
     padding: 20px;
+    text-decoration: none; /* Alt çizgileri kaldırır */
+    text-align: center;
   }
   
   .card-title {

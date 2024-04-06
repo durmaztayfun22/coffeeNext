@@ -1,7 +1,7 @@
 import React from "react";
-import VideoPlayer from "../components/VideoPlayer";
-import '../../styles/VideoPlayer.css';
-import '../../styles/About.css';
+import VideoPlayer from "./components/VideoPlayer";
+import '../styles/VideoPlayer.css';
+import '../styles/About.css';
 
 export default function About({ locale }) {
   return(

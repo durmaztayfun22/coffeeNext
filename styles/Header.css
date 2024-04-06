@@ -42,12 +42,14 @@
     width: 80px;
     display: flex;
     align-items: center;
+    text-decoration: none;
   }
 
   .title img {
     width: 40px; /* Logo boyutunu ayarlayın */
     height: auto; /* Yüksekliği otomatik olarak ayarlar */
     margin-right: 10px; /* Logo ile metin arasında boşluk bırakır */
+    text-decoration: none;
   }
 
   span {
@@ -218,7 +220,12 @@
       top: 20px;
       width: calc(50% - 40px); /* Hamburger menü butonunun genişliği kadar azaltarak sol tarafa yerleştirin */
       left: 20px; /* Sol taraftan 20px içeride başlamasını sağlar */
+      text-decoration: none;
       position: absolute; /* Diğer stillerle birlikte mutlak konumlandırma kullanın */
+    }
+
+    span {
+      text-decoration: none;
     }
     
     .mobile-menu {
@@ -295,7 +302,12 @@
       top: 20px;
       width: calc(50% - 40px); /* Hamburger menü butonunun genişliği kadar azaltarak sol tarafa yerleştirin */
       left: 20px; /* Sol taraftan 20px içeride başlamasını sağlar */
+      text-decoration: none;
       position: absolute; /* Diğer stillerle birlikte mutlak konumlandırma kullanın */
+    }
+
+    span {
+      text-decoration: none;
     }
     
     .mobile-menu {
@@ -369,7 +381,12 @@
       top: 20px;
       width: calc(50% - 40px); /* Hamburger menü butonunun genişliği kadar azaltarak sol tarafa yerleştirin */
       left: 20px; /* Sol taraftan 20px içeride başlamasını sağlar */
+      text-decoration: none;
       position: absolute; /* Diğer stillerle birlikte mutlak konumlandırma kullanın */
+    }
+
+    span {
+      text-decoration: none;
     }
     
     .mobile-menu {
@@ -377,7 +394,7 @@
       position: fixed;
       top: 0;
       right: 0;
-      height: 50%;
+      height: 17%;
       max-width: 0; /* Başlangıçta menü gizlidir */
       background-color: #fff;
       overflow-x: hidden;

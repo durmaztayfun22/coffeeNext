@@ -1,8 +1,7 @@
 // Header.jsx'i dinamik olarak yükle
 
-import React, { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
-
+import { useState, useEffect, useRef } from 'react';
+import { useLocation, Link  } from 'react-router-dom';
 import '../../styles/Header.css';
 
 export default function Header({ locale, setLocale }) {
@@ -102,18 +101,16 @@ export default function Header({ locale, setLocale }) {
             <div className="container">  
                 <header className="header">
                     <div className="header-content">
-                        <Link href="/">
-                            <a className="title">
-                                <img src="https://i.imgur.com/qscsMyf.png" alt="coffeeCup" />
-                                <span className="fs-4">{locale === 'tr' ? 'Kahve' : 'Coffee'}</span>
-                            </a>
-                        </Link>
+                        <a href="/" className="title">
+                            <img src="https://i.imgur.com/qscsMyf.png" alt="coffeeCup" />
+                            <span className="fs-4">{locale === 'tr' ? 'Kahve' : 'Coffee'}</span>
+                        </a>
 
                         <button className={buttonClass} onClick={toggleMenu}>
                             <span className="hamburger-icon">&#9776;</span>
                         </button>
 
-                        <div ref={menuRef} className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+                        <div  ref={menuRef} className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
                             <ul className="ul">
                                 <li className='language-li li' onClick={toggleDropdown} ref={dropdownRef} >
                                 {locale === 'tr' ? 'Sayfa Dilini Çevir' : 'Language'}
@@ -124,9 +121,9 @@ export default function Header({ locale, setLocale }) {
                                     </div>
                                 )}
                                 </li>
-                                <li className="li"><Link href="/"><a className="nav-link">{locale === 'tr' ? 'Ana Sayfa' : 'Home'}</a></Link></li>
-                                <li className="li"><Link href="/about"><a className="nav-link">{locale === 'tr' ? 'Hakkında' : 'About'}</a></Link></li>
-                                <li className="li"><Link href="/contact"><a className="nav-link">{locale === 'tr' ? 'İletişim' : 'Contact'}</a></Link></li>
+                                <li className="li"><Link to="/" className="nav-link">{locale === 'tr' ? 'Ana Sayfa' : 'Home'}</Link></li>
+                                <li className="li"><Link to="/about" className="nav-link">{locale === 'tr' ? 'Hakkında' : 'About'}</Link></li>
+                                <li className="li"><Link to="/contact" className="nav-link">{locale === 'tr' ? 'İletişim' : 'Contact'}</Link></li>
                             </ul>
                         </div>
                     </div>

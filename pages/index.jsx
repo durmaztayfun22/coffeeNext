@@ -1,11 +1,17 @@
 import React from 'react';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import About from './About';
+import CoffeeDetails from './CoffeeDetails';
+import Contact from './Contact';
 import NotFoundPage from './components/fourZerofour';
 import HomeContent from './components/HomeContent';
 import LoadingPage from "./components/Loading";
 import '../styles/App.css';
-import React, { useState, useEffect} from 'react';
+import { useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
+
 export default function App() { // useState ve useEffect kullanan bileşenlerin istemci tarafında çalışmasını sağlar
   const [isLoading, setIsLoading] = useState(true); // Yeni durum değişkeni
   const [locale, setLocale] = useState("en");
@@ -24,12 +30,17 @@ export default function App() { // useState ve useEffect kullanan bileşenlerin 
   }
 
   return (
-    <>
-      <Header locale={locale} setLocale={setLocale}/>
-      <Link href="/" ><HomeContent locale={locale}/></Link>
-      <Link href="*"><NotFoundPage locale={locale}/></Link>
-      <Footer locale={locale}/>
-    </>
+    <Router>
+      <Header locale={locale} setLocale={setLocale} />
+      <Routes >
+        <Route exact path="/" element={<HomeContent locale={locale}/>} />
+        <Route exact path="/about" element={<About locale={locale}/>} />
+        <Route exact path="/contact" element={<Contact locale={locale}/>} />
+        <Route exact path="/coffeeDetails/:slug" element={<CoffeeDetails locale={locale}/>} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+      <Footer locale={locale} />
+    </Router>
   );
 }
 
